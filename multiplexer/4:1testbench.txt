@@ -1,0 +1,17 @@
+module testbench_4to1;
+
+    reg [3:0] I;
+    reg [1:0] s;
+    wire y;
+
+    mux_4to1 uut (.I(I), .s(s), .y(y));
+
+    initial begin
+        I = 4'b0110; // Input pattern
+        s = 2'b00;   // Initial selection
+        #10;
+    end
+
+    always #10 s[0] = ~s[0];
+    always #20 s[1] = ~s[1];
+endmodule

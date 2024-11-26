@@ -1,0 +1,30 @@
+module test_fullsub;
+    reg a, b, Bin;
+    wire D, Bout;
+
+    fullsub uut (
+        .a(a), 
+        .b(b), 
+        .Bin(Bin), 
+        .D(D), 
+        .Bout(Bout)
+    );
+
+    initial begin
+        a = 0; b = 0; Bin = 0;
+        #100;
+        a = 0; b = 0; Bin = 1;
+        #100;
+        a = 0; b = 1; Bin = 0;
+        #100;
+        a = 0; b = 1; Bin = 1;
+        #100;
+        a = 1; b = 0; Bin = 0;
+        #100;
+        a = 1; b = 0; Bin = 1;
+        #100;
+        a = 1; b = 1; Bin = 0;
+        #100;
+        a = 1; b = 1; Bin = 1;
+    end
+endmodule

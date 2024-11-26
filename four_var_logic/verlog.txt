@@ -1,0 +1,6 @@
+module logic_simplified(a, b, c, d, y);
+    input a, b, c, d;
+    output y;
+
+    assign y = (c & ~d) | (a & ~b);
+endmodule

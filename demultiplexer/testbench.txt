@@ -1,0 +1,18 @@
+module testbench;
+
+    reg i;
+    reg [1:0] s;
+    wire [3:0] y;
+
+    onetofourdmux uut (.i(i), .y(y), .s(s));
+
+    initial begin
+        i = 1;
+        s = 2'b00;
+        #10; // Delay to observe output
+    end
+
+    always #10 s[0] = ~s[0];
+    always #20 s[1] = ~s[1];
+
+endmodule

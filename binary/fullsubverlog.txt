@@ -1,0 +1,7 @@
+module fullsub(a, b, Bin, D, Bout);
+    input a, b, Bin;
+    output D, Bout;
+
+    assign D = a ^ b ^ Bin;
+    assign Bout = (~a & b) | (Bin & (~a ^ b));
+endmodule

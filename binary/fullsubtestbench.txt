@@ -11,6 +11,7 @@ module test_fullsub;
     );
 
     initial begin
+        #100
         a = 0; b = 0; Bin = 0;
         #100;
         a = 0; b = 0; Bin = 1;

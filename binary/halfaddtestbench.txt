@@ -1,6 +1,6 @@
 module test_halfad1;
-    reg a, b;
-    wire carry, sum;
+    input a, b;
+    output carry, sum;
 
     halfad1 uut (
         .a(a), 
@@ -10,8 +10,9 @@ module test_halfad1;
     );
 
     initial begin
+        #100
         a = 0; b = 0;
-        #200;
+        #100;
         a = 0; b = 1;
         #100;
         a = 1; b = 0;

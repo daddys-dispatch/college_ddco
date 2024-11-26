@@ -1,6 +1,6 @@
 module test_halfad1;
-    input a, b;
-    output carry, sum;
+    reg a, b;
+    wire carry, sum;
 
     halfad1 uut (
         .a(a), 

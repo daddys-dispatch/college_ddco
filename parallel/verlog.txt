@@ -1,0 +1,14 @@
+module addsub(a, b, c, s);
+
+    input [3:0] a;
+    input [3:0] b;
+    input c;
+    output reg [4:0] s;
+
+    always @(a, b, c) begin
+        if (c)
+            s = a - b; // Subtraction when c = 1
+        else
+            s = a + b; // Addition when c = 0
+    end
+endmodule

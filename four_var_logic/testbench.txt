@@ -1,0 +1,23 @@
+module test_logic_simplified;
+    reg a, b, c, d;
+    wire y;
+
+    logic_simplified uut (
+        .a(a), 
+        .b(b), 
+        .c(c), 
+        .d(d), 
+        .y(y)
+    );
+
+    initial begin
+        // Initialize Inputs
+        a = 0; b = 0; c = 0; d = 0;
+
+        // Stimulus
+        #100 d = ~d;  // Toggle d
+        #20 c = ~c;   // Toggle c
+        #40 b = ~b;   // Toggle b
+        #80 a = ~a;   // Toggle a
+    end
+endmodule

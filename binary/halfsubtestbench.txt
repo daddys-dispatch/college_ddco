@@ -1,0 +1,21 @@
+module test_halfsub;
+    reg a, b;
+    wire d, Bout;
+
+    halfsub uut (
+        .a(a), 
+        .b(b), 
+        .d(d), 
+        .Bout(Bout)
+    );
+
+    initial begin
+        a = 0; b = 0;
+        #200;
+        a = 0; b = 1;
+        #100;
+        a = 1; b = 0;
+        #100;
+        a = 1; b = 1;
+    end
+endmodule

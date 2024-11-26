@@ -1,0 +1,16 @@
+module testbench_2to1;
+
+    reg [1:0] i;
+    reg s;
+    wire y;
+
+    mux_2to1 uut (.i(i), .s(s), .y(y));
+
+    initial begin
+        i = 2'b11; // Input pattern
+        s = 0;     // Initial selection
+        #10;
+        s = 1;
+        #10;
+    end
+endmodule

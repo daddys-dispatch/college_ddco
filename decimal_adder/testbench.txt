@@ -1,0 +1,28 @@
+module decimal_adder_tb;
+    reg [3:0] A, B;
+    reg Cin;
+    wire [3:0] Sum;
+    wire Cout;
+
+    decimal_adder uut (
+        .A(A),
+        .B(B),
+        .Cin(Cin),
+        .Sum(Sum),
+        .Cout(Cout)
+    );
+
+    initial begin
+        A = 4'd5; B = 4'd3; Cin = 0;
+        #10;
+        $display("A = %d, B = %d, Cin = %d => Sum = %d, Cout = %d", A, B, Cin, Sum, Cout);
+
+        A = 4'd7; B = 4'd8; Cin = 0;
+        #10;
+        $display("A = %d, B = %d, Cin = %d => Sum = %d, Cout = %d", A, B, Cin, Sum, Cout);
+
+        A = 4'd6; B = 4'd5; Cin = 1;
+        #10;
+        $display("A = %d, B = %d, Cin = %d => Sum = %d, Cout = %d", A, B, Cin, Sum, Cout);
+    end
+endmodule

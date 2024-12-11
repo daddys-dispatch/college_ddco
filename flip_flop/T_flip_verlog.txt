@@ -1,0 +1,14 @@
+module tff(clk, t, q, qb);
+    input clk, t;
+    output reg q = 0, qb;
+
+    always @(posedge clk) begin
+        if (t) begin
+            q = ~q;
+            qb = ~q;
+        end else begin
+            q = q;
+            qb = ~q;
+        end
+    end
+endmodule
